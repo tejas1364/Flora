@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24299" systemVersion="24G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AppSettings" representedClassName="AppSettings" syncable="YES" codeGenerationType="class">
+    <entity name="AppSettings" representedClassName="AppSettings" syncable="YES">
         <attribute name="accentColor" attributeType="String"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="notificationsEnabled" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -13,7 +13,7 @@
         <attribute name="theme" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="Cycle" representedClassName="Cycle" syncable="YES" codeGenerationType="class">
+    <entity name="Cycle" representedClassName="Cycle" syncable="YES">
         <attribute name="averageFlowLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="cycleLength" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -25,7 +25,7 @@
         <relationship name="symptoms" toMany="YES" deletionRule="Nullify" destinationEntity="SymptomLog" inverseName="cycle" inverseEntity="SymptomLog"/>
         <relationship name="vitals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Vitals" inverseName="cycle" inverseEntity="Vitals"/>
     </entity>
-    <entity name="PeriodEvent" representedClassName="PeriodEvent" syncable="YES" codeGenerationType="class">
+    <entity name="PeriodEvent" representedClassName="PeriodEvent" syncable="YES">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="flowLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -35,7 +35,7 @@
         <attribute name="source" attributeType="String"/>
         <relationship name="cycle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cycle" inverseName="periodEvents" inverseEntity="Cycle"/>
     </entity>
-    <entity name="PredictionSnapshot" representedClassName="PredictionSnapshot" syncable="YES" codeGenerationType="class">
+    <entity name="PredictionSnapshot" representedClassName="PredictionSnapshot" syncable="YES">
         <attribute name="computedAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="confidence" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="cycleDay" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -50,7 +50,7 @@
         <attribute name="ovulationEstimate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="rationale" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="SymptomLog" representedClassName="SymptomLog" syncable="YES" codeGenerationType="class">
+    <entity name="SymptomLog" representedClassName="SymptomLog" syncable="YES">
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateTime" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
@@ -60,7 +60,7 @@
         <attribute name="tags" optional="YES" attributeType="String"/>
         <relationship name="cycle" maxCount="1" deletionRule="Nullify" destinationEntity="Cycle" inverseName="symptoms" inverseEntity="Cycle"/>
     </entity>
-    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES" codeGenerationType="class">
+    <entity name="UserProfile" representedClassName="UserProfile" syncable="YES">
         <attribute name="appLockEnabled" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="biometricAuthEnabled" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="birthYear" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -72,7 +72,7 @@
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="usesMetric" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Vitals" representedClassName="Vitals" syncable="YES" codeGenerationType="class">
+    <entity name="Vitals" representedClassName="Vitals" syncable="YES">
         <attribute name="bbt" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateTime" attributeType="Date" usesScalarValueType="NO"/>

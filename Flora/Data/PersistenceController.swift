@@ -24,7 +24,7 @@ class PersistenceController {
         let profile = UserProfile(context: viewContext)
         profile.id = UUID()
         profile.timezone = TimeZone.current.identifier
-        profile.usesMetric = Locale.current.usesMetricSystem
+        profile.usesMetric = Locale.current.measurementSystem == .metric
         profile.currentMode = "standard"
         profile.createdAt = Date()
         profile.updatedAt = Date()
