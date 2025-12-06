@@ -263,7 +263,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# SwiftLint (safe, non-fatal)\nif which swiftlint >/dev/null 2>&1; then\n  echo \"Running SwiftLint...\"\n  # Lint the project root explicitly so path is never empty\n  swiftlint --path \"${SRCROOT}\" || true\nelse\n  echo \"warning: SwiftLint not installed. Install via 'brew install swiftlint' to enable linting.\"\nfi\n";
+			shellScript = "
+";
 		};
 		965511FF2EB9D5F40043A0E9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

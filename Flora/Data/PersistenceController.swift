@@ -72,8 +72,10 @@ class PersistenceController {
         let storeDescription = NSPersistentStoreDescription(url: storeURL)
         storeDescription.setOption(encryptionKey as NSString,
                                    forKey: "passphrase")
+#if os(iOS)
         storeDescription.setOption(FileProtectionType.complete as NSObject,
                                    forKey: NSPersistentStoreFileProtectionKey)
+#endif
         
         container.persistentStoreDescriptions = [storeDescription]
     }

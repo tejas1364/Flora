@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+#if os(iOS)
+import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
 
 // MARK: - Colors
 enum FloraColor {
@@ -21,13 +26,53 @@ enum FloraColor {
     static let sage = Color(hex: "A6C1A8")
     
     // Semantic colors
-    static let background = Color(.systemBackground)
-    static let secondaryBackground = Color(.secondarySystemBackground)
-    static let tertiaryBackground = Color(.tertiarySystemBackground)
+    static let background: Color = {
+#if os(iOS)
+        Color(UIColor.systemBackground)
+#elseif os(macOS)
+        Color(nsColor: NSColor.windowBackgroundColor)
+#endif
+    }()
     
-    static let label = Color(.label)
-    static let secondaryLabel = Color(.secondaryLabel)
-    static let tertiaryLabel = Color(.tertiaryLabel)
+    static let secondaryBackground: Color = {
+#if os(iOS)
+        Color(UIColor.secondarySystemBackground)
+#elseif os(macOS)
+        Color(nsColor: NSColor.underPageBackgroundColor)
+#endif
+    }()
+    
+    static let tertiaryBackground: Color = {
+#if os(iOS)
+        Color(UIColor.tertiarySystemBackground)
+#elseif os(macOS)
+        Color(nsColor: NSColor.controlBackgroundColor)
+#endif
+    }()
+    
+    static let label: Color = {
+#if os(iOS)
+        Color(UIColor.label)
+#elseif os(macOS)
+        Color(nsColor: NSColor.labelColor)
+#endif
+    }()
+    
+    static let secondaryLabel: Color = {
+#if os(iOS)
+        Color(UIColor.secondaryLabel)
+#elseif os(macOS)
+        Color(nsColor: NSColor.secondaryLabelColor)
+#endif
+    }()
+    
+    static let tertiaryLabel: Color = {
+#if os(iOS)
+        Color(UIColor.tertiaryLabel)
+#elseif os(macOS)
+        Color(nsColor: NSColor.tertiaryLabelColor)
+#endif
+    }()
     
     // Flow levels
     static let spotting = Color.gray.opacity(0.3)

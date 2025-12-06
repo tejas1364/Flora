@@ -297,7 +297,9 @@ struct PeriodLogSheet: View {
                     .padding(.vertical)
             }
             .navigationTitle("Log Period")
+#if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+#endif
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
@@ -325,7 +327,9 @@ struct SymptomLogSheet: View {
         NavigationView {
             Text("Symptom Log")
                 .navigationTitle("Log Symptom")
+#if os(iOS)
                 .navigationBarTitleDisplayMode(.inline)
+#endif
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") { dismiss() }
@@ -342,7 +346,9 @@ struct BBTLogSheet: View {
         NavigationView {
             Text("BBT Log")
                 .navigationTitle("Log Temperature")
+#if os(iOS)
                 .navigationBarTitleDisplayMode(.inline)
+#endif
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") { dismiss() }
